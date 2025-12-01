@@ -1,0 +1,84 @@
+@import '../../styles/veriables.scss';
+
+.header {
+    height: 165px;
+
+    background-color: $color-header;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 $size-8x 0 $size-8x;
+}
+
+.logo {
+    width: 105px;
+    height: 56;
+    margin: $size-4x;
+    .a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .h1 {
+            color: $color-title;
+            font-family: $font-family;
+            font-size: $size-4x;
+
+            &:hover {
+                color:  $color-active;
+            }
+        }
+
+        .img {
+            width: $size-5x; 
+            height: $size-5x;
+            object-fit: contain;
+        }
+    }
+}
+
+.containerInput {
+    position: relative;
+    height: 56px;
+    width: 890px;
+    margin-right: $size-8x;
+
+    .input {
+        height: calc(100% - 2px);
+        width: calc(100% - 2px);
+        padding: 14px;
+        border: 2px solid rgb(255, 254, 254);
+        font-size: $size-2x;
+        font-family: $font-family;
+        border-radius: 50px;
+        background-color: $color-title;
+        color: $color-block;
+
+        letter-spacing: 2px; 
+
+        &:focus {
+            outline: none;
+            border: 0.5px solid black;
+            box-shadow: -8px -12px 0px black;
+        }
+    }
+
+    .icon {
+            position: absolute;
+            right: 20px;
+            top: calc(50% + 5px);
+            transform: translateY(calc(-50% - 5px));
+    }
+
+    @media (max-width: $breakpoint-large) {
+        width: 190px;
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+        display: none;
+    }
+}
