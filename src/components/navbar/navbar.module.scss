@@ -1,0 +1,132 @@
+@import '../../styles/veriables.scss';
+
+.navbar {
+    width: 661px;
+    height: 56px; 
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $size-7x;
+    
+    .li {
+        font-family: $font-family;
+        font-size: $size-3x;
+        color: $color-title;
+
+        cursor: pointer;
+
+        &:hover {
+            color: $color-active;
+            text-decoration: underline;
+            transition: border-bottom 0.3s ease;
+        }
+
+    }
+
+    .containerButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+
+        .buttonLogin {
+            width: 128px;
+            height: 52px;
+            font-size: $size-3x;
+            font-family: $font-family;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.75em;
+            margin-right: $size-2x;
+
+            background: #ffffff;
+
+            &:hover {
+                display: block;
+                border: 2px solid black;
+                border-radius: 0.75em;
+                
+                background: $color-active;
+                color: #ffffff;
+                transform: translateY(-0.25em);
+                transition: transform 0.15s ease;
+            }
+
+        }
+
+        .buttonRegis {
+            width: 128px;
+            height: 52px;
+            font-size: $size-3x;
+            font-family: $font-family;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.75em;
+
+            background: $color-title;
+
+            &:hover {
+                display: block;
+                border: 2px solid black;
+                border-radius: 0.75em;
+                
+                background: $color-active;
+                color: #ffffff;
+                transform: translateY(-0.25em);
+                transition: transform 0.15s ease;
+            }
+        }
+
+    }
+
+    .a {
+        width: $size-4x; 
+        height: $size-4x;
+        object-fit: contain;
+
+        filter: brightness(0) invert(1);
+    }
+}
+
+
+@media (max-width: $breakpoint-large) {
+    .burger {
+        width: 30px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+
+        .span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            &:nth-child(4) {
+                opacity: 0;
+            }
+        }
+    }
+}
