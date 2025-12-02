@@ -2,22 +2,27 @@
 
 .header {
     height: 165px;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: $color-header;
 }
 
 .container {
+    position: relative;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 $size-8x 0 $size-8x;
+    padding: 0 $size-8x 0 $size-4x;
 }
 
 .logo {
     width: 105px;
     height: 56;
     margin: $size-4x;
+    
     .a {
         display: flex;
         justify-content: center;
@@ -74,11 +79,25 @@
             transform: translateY(calc(-50% - 5px));
     }
 
+    //Удаляем оставшийся Input
     @media (max-width: $breakpoint-large) {
-        width: 190px;
+        display: flex;
+        justify-content: space-around;
+
+        .input {
+            margin-right: 20px;
+        }
+        .icon {
+            margin-right: 20px;
+        }
     }
 
-    @media (max-width: $breakpoint-desktop) {
-        display: none;
+    @media (max-width: $breakpoint-mobile) {
+        .input {
+            display: none;
+        }
+        .icon {
+            display: none;
+        }
     }
 }

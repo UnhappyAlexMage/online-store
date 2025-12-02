@@ -13,7 +13,7 @@ export default function Navbar() {
 
     return(
         <nav className={styles.navbar}>
-            <ul className={styles.container} onClick={handleBurgerClick}>
+            <ul className={`${styles.container} ${showMenu ? styles.show : styles.hide}`} >
                 <li className={styles.li}>About</li>
                 <li className={styles.li}>Products</li>
                 <div className={styles.containerButtons}>
@@ -22,11 +22,10 @@ export default function Navbar() {
                 </div>
                 <a className={styles.a} href="#"><img src={basketPict} alt="picture_shop" /></a>
             </ul>
-            <a href="/" className={styles.burger}>
-                    <span className={styles.span}></span>
-                    <span className={styles.span}></span>
-                    <span className={styles.span}></span>
-                    <span className={styles.span}></span>
+            <a href="/" className={`${styles.burger} ${showMenu ? styles.burgerActive : ''}`} onClick={handleBurgerClick}>
+                <span className={styles.span}></span>
+                <span className={styles.span}></span>
+                <span className={styles.span}></span>
             </a>
         </nav>
     );
