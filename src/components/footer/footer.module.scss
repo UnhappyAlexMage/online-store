@@ -1,0 +1,86 @@
+@import '../../styles/veriables.scss';
+
+.footer {
+    height: 100%;
+    max-height: 83px;
+    width: 100%;
+    position: fixed;
+    left:0px;
+    bottom:0px;
+    
+    background-color: $color-footer;
+
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 50px 0 50px;
+    
+
+        .logo {
+            width: 135px;
+            height: 56;
+            
+            .a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .h1 {
+                    color: $color-title;
+                    font-family: $font-family;
+                    font-size: $size-4x;
+
+                    &:hover {
+                        color:  $color-active;
+                    }
+                }
+
+                .imgLogo {
+                    width: $size-5x; 
+                    height: $size-5x;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .span {
+            font-size: $size-2x;
+            font-family: $font-family;
+            color: $color-text;
+
+            .a {
+                cursor: pointer;
+                text-decoration: none;
+                color: $color-active;
+
+                &:hover {
+                    text-decoration: underline;
+                    transition: border-bottom 0.3s ease;
+                    color: #b370ff;
+                }
+            }
+        }
+        
+        .iconsSocial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+            .socialIcons {
+                cursor: pointer;
+                width: $size-4x; 
+                height: $size-4x;
+                object-fit: contain;
+                filter: brightness(0) invert(1);
+            }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .span {
+        display: none;
+    }
+}
