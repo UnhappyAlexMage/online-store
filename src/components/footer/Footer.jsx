@@ -7,6 +7,7 @@ import telegramIcon from '../../assets/images/telegram.png';
 export default function Footer() {
     return (
         <footer className={styles.footer}>
+            <hr />
             <div className={styles.container}>
                 <div className={styles.logo}>
                     <a className={styles.a} href="/">

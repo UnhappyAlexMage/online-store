@@ -29,6 +29,7 @@ export default function Header() {
                 </div>
                 <Navbar />
             </form>
+            <hr />
         </header>
     );
 }
