@@ -14,9 +14,10 @@ export default function Sidebar() {
                     <li className={styles.sidebarItem}>Shoes</li>
                     <li className={styles.sidebarItem}>Miscellaneous</li>
                 </ul>
+                <hr></hr>
                 <div className={styles.sidebarHelp}>
-                    <span><a href="">Help</a></span>
-                    <span><a href="">Terms & Conditions</a></span>
+                    <span className={styles.span}><a href="">Help</a></span>
+                    <span className={styles.span}><a href="">Terms & Conditions</a></span>
                 </div>
             </div>
         </aside>
