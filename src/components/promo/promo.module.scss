@@ -1,0 +1,81 @@
+@import '../../styles/veriables.scss';
+
+.container_card {
+    display: flex;
+    flex-direction: column;
+    max-width: 1180px;
+    width: 100%;
+    max-height: 523px;
+    height: 100%;
+    margin-left: 25px;
+    margin-top: 25px;
+    border-radius: 12px;
+    background-color: $color-block;
+
+    .title_promo {
+        margin-left: 25px;
+        margin-right: 25px;
+        width: auto;
+        height: 80px;
+        color: $color-text;
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: calc($size-8x + $size-7x + $size-4x);
+    }
+
+    .block_promo_card {
+        width: auto;
+        height: 100%;
+        margin-left: 25px;
+        margin-right: 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .description_block {
+            position: absolute;
+            max-width: 554px;
+            width: 100%;
+            max-height: 183px;
+            height: 100%;
+            margin-left: 70px;
+            background-color: $color-block;
+
+            .span {
+                font-family: 'Montserrat';
+                color: $color-text;
+                font-size: $size-3x;
+            }
+
+            .h3 {
+                font-family: $font-family;
+                font-size: $size-7x;
+                color: #ffffff;
+            }
+
+            .button {
+                width: 145px;
+                height: 58px;
+                padding: 10px 10px 10px 10px;
+                background-color: $color-active;
+                color: #ffffff;
+                font-size: $size-3x;
+                border-radius: 12px;
+                font-family: $font-family;
+
+                &:hover {
+                    background-color: #caa0fa;
+                }
+            }
+        }
+
+        .img {
+                position: relative;
+                left: 50%;
+                width: 462px; 
+                height: 359px;
+                object-fit: contain;
+                margin-right: 30px;
+        }
+    }
+}
