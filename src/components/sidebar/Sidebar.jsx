@@ -1,6 +1,17 @@
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCategories } from '../../store/fetchCategories.js';
+
 import styles from './sidebar.module.scss';
 
 export default function Sidebar() {
+    const categoriesList = useSelector(state => state.categories.v1);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchCategories());
+    }, [dispatch]);
+
     return(
         <aside className={styles.sidebar}>
             <div className={styles.sidbarNavigation}>
@@ -8,11 +19,7 @@ export default function Sidebar() {
                     <h2>CATEGORIES</h2>
                 </div>
                 <ul className={styles.sidebarList}>
-                    <li className={styles.sidebarItem}>Electronics</li>
-                    <li className={styles.sidebarItem}>Clothes</li>
-                    <li className={styles.sidebarItem}>Furniture</li>
-                    <li className={styles.sidebarItem}>Shoes</li>
-                    <li className={styles.sidebarItem}>Miscellaneous</li>
+                    {categoriesList.map(category => (<li className={styles.sidebarItem} key={category.id}>{category.name}</li>))}
                 </ul>
                 <hr></hr>
                 <div className={styles.sidebarHelp}>
