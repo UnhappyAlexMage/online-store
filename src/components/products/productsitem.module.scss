@@ -1,0 +1,43 @@
+@import '../../styles/veriables.scss';
+
+.itemblock {
+    flex:1;
+    display: inline-block;
+    max-width: min(302px, 95vw);
+    width: 100%;
+    height: auto;
+
+    border: 1px solid green;
+
+    .itemblock_img {
+        height: 50%;
+        width: 100%;
+        object-fit: contain;
+        border: 1px solid white;
+    }
+
+    .itemblock_description {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 5px 15px 15px;
+
+        .descriptionh5 {
+            font-family: $font-family;
+            font-size: $size-2x;
+            color: $color-title;
+        }
+
+        .descriptionsp {
+            font-family: $font-family;
+            font-size: 14px;
+            color: $color-text;
+        }
+        
+        .descriptionspan {
+            font-size: $size-3x;
+            font-family: 'Montserrat';
+            color: $color-active;
+            margin-top: 30px;
+        }
+    }
+}
