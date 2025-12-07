@@ -1,0 +1,58 @@
+@import '../../styles/veriables.scss';
+
+.blockTrending {
+    position: relative;
+    max-width: min(1510px, 95vw);
+    width: 100%;
+    max-height: 478px;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: clamp(20px, 4vw, 60px);
+    margin-top: clamp(20px, 3vw, 25px);
+    
+    padding: clamp(20px, 2.5vw, 35px) clamp(30px, 4vw, 55px);
+    
+    border-radius: 12px;
+    background-color: $color-block;
+
+    .h4 {
+        margin-bottom: 25px;
+        font-family: $font-family;
+        font-size: $size-4x;
+        color: $color-title;
+    }
+
+    .sectionTrending {
+        display: flex;
+        max-width: min(1430px, 95vw);
+        width: 100%;
+        min-height: 260px;
+        margin-bottom: 25px;
+        border: 1px solid blue;
+        cursor: pointer;
+    }
+
+    .button {
+        max-width: 145px;
+        width: 100%;
+        min-height: 58px;
+        
+        background-color: $color-active;
+        color: #ffffff;
+        font-size: clamp(1rem, 1.5vw, $size-3x);
+        border-radius: 12px;
+        font-family: $font-family;
+        margin-bottom: 25px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: #caa0fa;
+        }
+    }
+}
