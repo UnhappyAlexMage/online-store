@@ -11,6 +11,7 @@
     margin-top: 25px;
     border-radius: 12px;
     background-color: $color-block;
+    padding-bottom: 35px;
 
     .title_promo {
         margin-left: 25px;
@@ -54,8 +55,10 @@
             }
 
             .button {
-                width: 145px;
-                height: 58px;
+                max-width: 145px;
+                width: 100%;
+                max-height: 58px;
+                height: 100%;
                 padding: 10px 10px 10px 10px;
                 background-color: $color-active;
                 color: #ffffff;
@@ -72,10 +75,13 @@
         .img {
                 position: relative;
                 left: 50%;
-                width: 462px; 
-                height: 359px;
+                max-width: 462px;
+                width: 100%;
+                max-height: 359px;
+                width: 100%;
                 object-fit: contain;
                 margin-right: 30px;
+                margin-top: 30px;
         }
     }
 }
