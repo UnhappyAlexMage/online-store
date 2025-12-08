@@ -1,14 +1,14 @@
 import styles from './productsitem.module.scss';
-import logoTest from '../../assets/images/basket.png';
 
-export default function GetProductsItem() {
+export default function GetProductsItem(props) {
+
     return(
         <div className={styles.itemblock}>
-            <img className={styles.itemblock_img} src={logoTest} alt="item-logo" />
+            <img className={styles.itemblock_img} src={props.image} alt="item-logo" />
             <div className={styles.itemblock_description}>
-                <h5 className={styles.descriptionh5}>Classic Red Pullover Hoodie</h5>
-                <p className={styles.descriptionsp}>classic-red-pullover-hoodie</p>
-                <span className={styles.descriptionspan}>99$</span>
+                <h5 className={styles.descriptionh5}>{props.title}</h5>
+                <p className={styles.descriptionsp}>{props.slug}</p>
+                <span className={styles.descriptionspan}>{props.price}$</span>
             </div>
         </div>
     );
