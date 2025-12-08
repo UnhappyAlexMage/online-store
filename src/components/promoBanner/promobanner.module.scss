@@ -1,0 +1,115 @@
+@import '../../styles/veriables.scss';
+
+.containerPromoBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: min(1510px, 95vw);
+    width: 100%;
+    min-height: 678px;
+    height: 100%;
+
+    margin-top: 35px;
+    margin-left: 55px;
+
+    border-radius: 12px;
+    background-color: $color-block;
+
+    position: relative;
+    
+
+    .promo {
+        position: relative;
+        min-width: calc(1510px / 2);
+        min-height: 678px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        background-color: $color-block;
+
+        .span {
+            font-family: 'Montserrat';
+            font-size: calc($size-8x + 38px);
+            color: $color-active;
+            margin-top: 45px;
+        }
+        
+        .h1 {
+            position: relative;
+            top: -70px;
+            color: $color-active;
+            font-size: calc($size-8x + 138px);
+            font-family: 'Montserrat';
+            
+        }
+
+        .button {
+            position: relative;
+            top: -90px;
+            max-width: 155px;
+            width: 100%;
+            max-height: 68px;
+            height: 100%;
+            padding: 10px 10px 10px 10px;
+            background-color: $color-active;
+            color: #ffffff;
+            font-size: $size-3x;
+            border-radius: 12px;
+            font-family: $font-family;
+
+            &:hover {
+                background-color: #caa0fa;
+            }
+        }
+
+        .saleone {
+            position: absolute;
+            right: 75%;
+            bottom: 18%;
+            width: 214px;
+            height: 180px;
+            max-width: 30%
+        }
+
+        .saletwo {
+            position: absolute;
+            z-index: 1;
+            top: 80%;
+            left: 63%;
+            width: 299px;
+            height: 181px;
+            max-width: 40%
+        }
+    }
+
+    .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 678px; /* или нужная высота */
+        overflow: hidden;
+
+        .imageContainerP {
+            position: absolute;
+            bottom: 4%;
+            left: 37%;
+            z-index: 1;
+            font-family: $font-family;
+            font-size: $size-3x;
+            color: #212123;
+            cursor: pointer;
+
+            .strong {
+                color: $color-active;
+            }
+        }
+
+        .banner {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+    }
+}
