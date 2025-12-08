@@ -5,12 +5,14 @@ import { fetchCategories } from '../../store/fetchCategories.js';
 import styles from './sidebar.module.scss';
 
 export default function Sidebar() {
-    const categoriesList = useSelector(state => state.categories.v1);
+    const categoriesList = useSelector(state => state.data.v1);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchCategories());
     }, [dispatch]);
+
+    const categoriesListLimited = categoriesList.slice(0, 5);
 
     return(
         <aside className={styles.sidebar}>
@@ -19,7 +21,7 @@ export default function Sidebar() {
                     <h2>CATEGORIES</h2>
                 </div>
                 <ul className={styles.sidebarList}>
-                    {categoriesList.map(category => (<li className={styles.sidebarItem} key={category.id}>{category.name}</li>))}
+                    {categoriesListLimited.map(category => (<li className={styles.sidebarItem} key={category.id}>{category.name}</li>))}
                 </ul>
                 <hr></hr>
                 <div className={styles.sidebarHelp}>
