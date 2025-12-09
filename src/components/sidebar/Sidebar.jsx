@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCategories } from '../../store/fetchCategories.js';
+import { fetchCategories } from '../../store/fetchApiThunk.js';
 
 import styles from './sidebar.module.scss';
 
 export default function Sidebar() {
-    const categoriesList = useSelector(state => state.data.v1);
+    const categoriesList = useSelector(state => state.categories.item);
     const dispatch = useDispatch();
 
     useEffect(() => {
