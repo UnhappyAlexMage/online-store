@@ -24,7 +24,7 @@ export const fetchCategories = () => async(dispatch) => {
 export const fetchProductsClothes = createAsyncThunk('products/fetchProductsClothes', 
                                                     async(_, { rejectWithValue }) => {
     try {
-        const response = await fetch(`${API_PRODUCTS}`); //?categorySlug=clothes
+        const response = await fetch(`${API_PRODUCTS}/clothes`); //?categorySlug=clothes
         if(!response.ok) {
             throw new Error('Failed to fetch products');
         }
@@ -38,7 +38,7 @@ export const fetchProductsClothes = createAsyncThunk('products/fetchProductsClot
 export const fetchProductsMiscellaneous = createAsyncThunk('products/fetchProductsMiscellaneous',
                                                             async(_, { rejectWithValue }) => {
     try {
-        const response = await fetch(`${API_PRODUCTS}?categorySlug=miscellaneous`);
+        const response = await fetch(`${API_PRODUCTS}/miscellaneous`); //?categorySlug=miscellaneous
         if(!response.ok) {
             throw new Error('Failed to fetch products');
         }
