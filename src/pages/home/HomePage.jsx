@@ -1,8 +1,12 @@
+
 import Promo from '../../components/promo/Promo.jsx';
 import Sidebar from '../../components/sidebar/Sidebar.jsx';
 import GetProductsSection from '../../components/products/GetProductsSection.jsx';
-import styles from './homepage.module.scss';
 import PromoBanner from '../../components/promoBanner/PromoBanner.jsx';
+import RecommendedProducts from '../../components/products/FeaturedProducts/RecommendedProducts.jsx';
+import GetProductsLessThan from '../../components/products/ProductsLessThan/GetProductsLessThan.jsx';
+
+import styles from './homepage.module.scss';
 
 export default function HomePage() {
     return(
@@ -12,7 +16,9 @@ export default function HomePage() {
                 <Promo />
             </div>
             <GetProductsSection />
+            <RecommendedProducts />
             <PromoBanner />
+            <GetProductsLessThan />
         </main>
     );
 }
