@@ -1,0 +1,140 @@
+@import '../../styles/veriables.scss';
+
+.container_modal {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1180px;
+    width: 100%;
+    min-height: 523px;
+    height: 100%;
+
+    margin-left: 25px;
+    margin-top: 25px;
+
+    border-radius: 12px;
+    background-color: $color-block;
+
+    .block_modal {
+        width: auto;
+        height: auto;
+        display: flex;
+        
+        margin: 24px;
+
+        .main_img {
+            height: 475px;
+            width: 475px;
+            object-fit: cover;
+        }
+
+        .images_column{
+            max-width: 92px;
+            width: 100%;
+            max-height: 475px;
+            height: 100px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-left: 20px;
+            margin-right: 40px;
+
+            .subsidiary_img {
+                max-width: 90px;
+                max-height: 90ppx;
+                margin-top: 5px;
+
+                cursor: pointer;
+            }
+        }
+
+        .block_description_product {
+            max-width: 475px;
+            width: 100%;
+            min-height: 475px;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            .span {
+                flex-wrap: wrap;
+                font-family: $font-family;
+                font-size: 24px;
+                color: white;
+            }
+            
+            .spanPrice{
+                font-family: $font-family;
+                font-size: 28px;
+                color: white;
+            }
+
+            .sizes {
+                font-family: $font-family;
+                font-size: 18px;
+                color: #b8b8b89d;
+                margin-top: 5px;
+            }
+
+            .descriptions {
+                flex-wrap: wrap;
+                margin-top: 5px;
+                font-family: $font-family;
+                font-size: 18px;
+                color: $color-text;
+            }
+        }
+
+        .block_buttons {
+            display: flex;
+            width: auto;
+            margin-top: 45px;
+            
+            .buttonAdd {
+                max-width: 175px;
+                width: 100%;
+                max-height: 58px;
+                
+                background-color: $color-active;
+                color: #ffffff;
+                font-size: clamp(1rem, 1.5vw, $size-3x);
+                border-radius: 12px;
+                padding: 10px 10px 10px 10px;
+                font-family: $font-family;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background-color: #caa0fa;
+                }
+            }
+
+            .buttonNext {
+                max-width: 195px;
+                width: 100%;
+                max-height: 58px;
+                
+                background-color: gray;
+                color: #ffffff;
+                font-size: clamp(1rem, 1.5vw, $size-3x);
+                border-radius: 12px;
+                padding: 10px 10px 10px 10px;
+                font-family: $font-family;
+                margin-left: 20px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background-color: #dfdfdf;
+                }
+            }
+        }
+    }
+}
