@@ -1,0 +1,40 @@
+@import '../../styles/veriables.scss';
+
+.container {
+    display: flex;
+    max-width: min(1430px, 95vw);
+    width: 100%;
+    max-height: 260px;
+    margin-bottom: 25px;
+
+    // border: 1px solid green;
+
+    .itemblock {
+        flex:1;
+        display: inline;
+        max-width: min(290px, 95vw);
+        width: 100%;
+        height: auto;
+        margin-right: 25px;
+        margin-left: 25px;
+        cursor: pointer;
+        
+        // border: 1px solid red;
+
+        .itemblock_img {
+            height: 80%;
+            width: 100%;
+            
+        }
+
+        .span {
+            // position: absolute;
+            font-size: calc($size-2x + 4px);
+            font-family: 'Montserrat';
+            color: white;
+            &:hover {
+                color: $color-active;
+            }
+        }
+    }
+}
