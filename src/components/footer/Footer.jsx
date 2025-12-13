@@ -1,12 +1,30 @@
 import styles from './footer.module.scss';
 import dollarIcon from '../../assets/images/dollar.png';
+
+import { useState, useEffect } from 'react';
+
 import gitIcon from '../../assets/images/git.png';
 import instagramIcon from '../../assets/images/instagram.png';
 import telegramIcon from '../../assets/images/telegram.png';
 
 export default function Footer() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+    const handleScroll = () => {
+        const scrolledToBottom = 
+            window.innerHeight + window.pageYOffset >= 
+            document.documentElement.scrollHeight - 100;
+        
+        setIsVisible(scrolledToBottom);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll)}, []);
+    
     return (
-        <footer className={styles.footer}>
+        <footer className={`${styles.footer} ${isVisible ? styles.visible : ''}`}>
             <hr />
             <div className={styles.container}>
                 <div className={styles.logo}>
