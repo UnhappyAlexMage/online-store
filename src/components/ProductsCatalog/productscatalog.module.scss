@@ -1,0 +1,82 @@
+@import '../../styles/veriables.scss';
+
+.blockTrending {
+    position: relative;
+    max-width: min(1510px, 95vw);
+    width: 100%;
+    // max-height: 478px;
+    // height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: clamp(100px, 10%, 135px);
+    margin-top: clamp(20px, 3vw, 25px);
+    
+    padding: clamp(20px, 2.5vw, 35px) clamp(30px, 4vw, 55px);
+    
+    border-radius: 12px;
+    background-color: $color-block;
+
+    .h4 {
+        margin-bottom: 15px;
+        font-family: $font-family;
+        font-size: $size-4x;
+        color: $color-title;
+    }
+
+    .inputGroup {
+        display: flex;
+        margin-bottom: 20px;
+        gap: 15px;
+
+        margin-right: auto;
+        padding-left: 20px;
+    }
+
+    .inputItem {
+        padding: 10px 15px;
+        border: 1px solid $color-text;
+        background-color: $color-block;
+        color: $color-title;
+        border-radius: 8px;
+        font-family: $font-family;
+        font-size: 14px;
+
+        &:focus {
+            outline: none;
+            border-color: $color-active;
+        }
+    }
+
+    .sectionTrending {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: min(1430px, 95vw);
+        width: 100%;
+        min-height: 260px;
+    }
+
+    .button {
+        max-width: 145px;
+        width: 100%;
+        min-height: 58px;
+        
+        background-color: $color-active;
+        color: #ffffff;
+        font-size: clamp(1rem, 1.5vw, $size-3x);
+        border-radius: 12px;
+        padding: 10px 10px 10px 10px;
+        font-family: $font-family;
+        margin-bottom: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: #caa0fa;
+        }
+    }
+}
