@@ -28,6 +28,4 @@ const categoriesSlice = createSlice({
     }
 })
 
-// export const { extraReducers } = categoriesSlice.actions; 
-// Экспортируем генераторы действий для использования в компонентах/thunk-ах
 export default categoriesSlice.reducer;

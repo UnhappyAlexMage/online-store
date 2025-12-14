@@ -21,6 +21,25 @@ export const fetchCategories = () => async(dispatch) => {
     }
 };
 
+export const fetchProducts = () => async(dispatch) => {
+    try {
+        const response = await fetch(`${API_PRODUCTS}`);
+        if(!response.ok) {
+            throw new Error(`Failed to fetch products`);
+        }
+        const productsJson = await response.json();
+        dispatch({
+            type: 'allProducts',
+            payload: productsJson
+        })
+    } catch(error) {
+        dispatch({
+            type: `allProducts/error`,
+            payload: error.message
+        })
+    }
+};
+
 export const fetchProductsClothes = createAsyncThunk('products/fetchProductsClothes', 
                                                     async(_, { rejectWithValue }) => {
     try {
