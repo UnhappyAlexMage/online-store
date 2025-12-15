@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import styles from './navbar.module.scss';
 import basketPict from '../../assets/images/basket.png';
@@ -14,8 +15,12 @@ export default function Navbar() {
     return(
         <nav className={styles.navbar}>
             <ul className={`${styles.container} ${showMenu ? styles.show : styles.hide}`} >
-                <li className={styles.li}>About</li>
-                <li className={styles.li}>Products</li>
+                <NavLink to="about">
+                    <li className={styles.li}>About</li>
+                </NavLink>
+                <NavLink to="products">
+                    <li className={styles.li}>Products</li>
+                </NavLink>
                 <div className={styles.containerButtons}>
                     <button className={styles.buttonLogin}>Sign In</button>
                     <button className={styles.buttonRegis}>Sign Up</button>
