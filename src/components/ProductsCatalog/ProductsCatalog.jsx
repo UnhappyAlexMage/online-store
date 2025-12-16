@@ -3,37 +3,38 @@ import ProductsCatalogItem from './ProductsCatalogItem.jsx';
 
 import styles from './productscatalog.module.scss';
 
-export default function ProductsCatalog() {
-    const canLoadMoreTrending = true;
+export default function ProductsCatalog(props) {
+    const canLoadMoreProducts= props.allProducts.length < 16;
     return(
         <article className={styles.article}>
             <div className={styles.blockTrending}>
-                <h4 className={styles.h4}>Related products</h4>
-                {!canLoadMoreTrending && (
+                <h4 className={styles.h4}>{props.title}</h4>
+                {!canLoadMoreProducts && (
                     <div className={styles.inputGroup}>
                         <input className={styles.inputItem} type="text" placeholder="Поиск..." />
                         <input className={styles.inputItem} type="text" placeholder="Фильтр..." />
                     </div>
                 )}
-                {/* <section className={styles.sectionTrending}>
-                    {props.productsLimited.map((product) => (
-                        <GetProductsItem 
+                <section className={styles.sectionTrending}>
+                    {props.allProducts.map((product) => (
+                        <ProductsCatalogItem 
                             key={product.key}
                             title={product.title}
                             slug={product.slug}
+                            category={product.category.name}
                             price={product.price}
                             image={product.images}
+                            onClick={() => props.onProductClick()}
                         />
                     ))}
-                </section> */}
-                <ProductsCatalogItem />
-                {canLoadMoreTrending && (<Fragment>
-                    <button className={styles.button} onClick={1}> {/*props.onShowClick*/}
+                </section>
+                {canLoadMoreProducts && (<Fragment>
+                    <button className={styles.button} onClick={props.onClickShowAll}>
                         See more
                     </button>
                 </Fragment>)}
-                {!canLoadMoreTrending && (<Fragment>
-                    <button className={styles.button} onClick={2}> {/*props.onHideClick*/}
+                {!canLoadMoreProducts && (<Fragment>
+                    <button className={styles.button} onClick={props.onClickHideAll}>
                         Close
                     </button>
                 </Fragment>)}
