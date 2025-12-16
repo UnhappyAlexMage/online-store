@@ -2,13 +2,21 @@ import ProductsCartItem from './ProductsCartItem.jsx';
 
 import styles from './productscart.module.scss';
 
-export default function ProductsCart() {
+export default function ProductsCart(props) {
     return(
         <article className={styles.container_productsCart}>
             <div>
                 <h1 className={styles.productsCart_name}>Your cart</h1>
                 <section className={styles.container_productsItem}>
-                    <ProductsCartItem />
+                    {props.CartItems.map((product) => (
+                        <ProductsCartItem 
+                            key={product.key}
+                            title={product.title}
+                            category={product.category}
+                            price={product.price}
+                            image={product.image}
+                        />
+                    ))}
                 </section>
             </div>
             <div className={styles.block_productsCart}>
