@@ -6,6 +6,7 @@ const initialState = {
     ProductsAll: [],
     ProductsClothes: [],
     ProductsMiscellaneous: [],
+    CartItems: [],
     selectedProduct: null,
     error: null
 };
@@ -19,6 +20,14 @@ const productsSlice = createSlice({
     reducers: {
         selectProduct: (state, action) => {
             state.selectedProduct = action.payload;
+        },
+        addToCart: (state, action) => {
+            const newProduct = action.payload;
+            state.CartItems.push(newProduct);
+        },
+        removeToCart: (state, action) => {
+            const newProduct = action.payload;
+            state.CartItems.pop(newProduct);
         }
     },
     extraReducers: (builder) => {
@@ -50,5 +59,5 @@ const productsSlice = createSlice({
     }
 });
 
-export const { selectProduct } = productsSlice.actions;
+export const { selectProduct, addToCart } = productsSlice.actions;
 export default productsSlice.reducer;
