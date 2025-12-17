@@ -25,9 +25,9 @@ const productsSlice = createSlice({
             const newProduct = action.payload;
             state.CartItems.push(newProduct);
         },
-        removeToCart: (state, action) => {
-            const newProduct = action.payload;
-            state.CartItems.pop(newProduct);
+        removeFromCart: (state, action) => {
+            const idToDelete = action.payload.id;
+            state.CartItems = state.CartItems.filter(item => item.id !== idToDelete);
         }
     },
     extraReducers: (builder) => {
@@ -59,5 +59,5 @@ const productsSlice = createSlice({
     }
 });
 
-export const { selectProduct, addToCart } = productsSlice.actions;
+export const { selectProduct, addToCart, removeFromCart } = productsSlice.actions;
 export default productsSlice.reducer;

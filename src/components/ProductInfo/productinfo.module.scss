@@ -86,6 +86,12 @@
                 font-size: 18px;
                 color: $color-text;
             }
+            .category {
+                margin-top: 10px;
+                font-family: $font-family;
+                font-size: 18px;
+                color: $color-title;
+            }
         }
 
         .block_buttons {
@@ -111,6 +117,10 @@
 
                 &:hover {
                     background-color: #caa0fa;
+                }
+
+                .isSubmiting {
+                    background-color: #ffffff;
                 }
             }
 

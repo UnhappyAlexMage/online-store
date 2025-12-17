@@ -25,6 +25,7 @@ export default function GetProductsSection(props) {
                             slug={product.slug}
                             price={product.price}
                             image={product.images}
+                            isClicked={props.isClicked}
                         />
                     ))}
                 </section>

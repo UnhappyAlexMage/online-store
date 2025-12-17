@@ -682,7 +682,7 @@ export const mockProducts = [
     },
     {
         "id": 190,
-        "title": "Trendy Pink-Tinted Sunglasses",
+        "title": "Trendy Pink-Tinted",
         "slug": "trendy-pink-tinted-sunglasses",
         "price": 38,
         "description": "Step up your style game with these fashionable black-framed, pink-tinted sunglasses. Perfect for making a statement while protecting your eyes from the glare. Their bold color and contemporary design make these shades a must-have accessory for any trendsetter looking to add a pop of color to their ensemble.",
