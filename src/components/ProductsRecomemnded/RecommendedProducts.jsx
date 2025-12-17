@@ -12,7 +12,7 @@ export default function RecommendedProducts() {
         dispatch(fetchProductsMiscellaneous());
     }, [dispatch])
 
-    const productsListMiscellaneous = useSelector(state => state.products.itemMiscellaneous);
+    const productsListMiscellaneous = useSelector(state => state.products.ProductsMiscellaneous) || [];
     const productsListLimit = productsListMiscellaneous.slice(1, 6);
 
     return(

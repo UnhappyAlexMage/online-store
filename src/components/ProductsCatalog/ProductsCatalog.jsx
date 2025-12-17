@@ -17,7 +17,8 @@ export default function ProductsCatalog(props) {
                 )}
                 <section className={styles.sectionTrending}>
                     {props.allProducts.map((product) => (
-                        <ProductsCatalogItem 
+                        <ProductsCatalogItem
+                            id={product.id}
                             key={product.key}
                             title={product.title}
                             slug={product.slug}
