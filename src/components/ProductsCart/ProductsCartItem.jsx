@@ -1,17 +1,23 @@
-import { useState } from 'react';
+import { removeFromCart } from '../../store/productsSlice.js'
+import { useDispatch } from 'react-redux';
+
 import styles from './productscartitem.module.scss';
 
 export default function ProductsCartItem(props) {
-  const [count, setCount] = useState(1);
-
-  const handleClickMinus = () => {
-    if (count > 1) {
-      setCount(prevCount => prevCount - 1);
-    }
+  const handleClickPlus = () => {
+    props.onCountChange(props.product.id, props.currentCount + 1);
   };
 
-  const handleClickPlus = () => {
-    setCount(prevCount => prevCount + 1);
+  const handleClickMinus =() => {
+    if(props.currentCount > 1) {
+      props.onCountChange(props.product.id, props.currentCount - 1);
+    }
+  }
+
+  const dispatch = useDispatch();
+  const removeHandleClick = (e) => {
+    e.preventDefault();
+    dispatch(removeFromCart(props.product));
   };
 
     return (
@@ -27,12 +33,12 @@ export default function ProductsCartItem(props) {
                 <span className={styles.productPrice}>{props.price}$</span>
                 <div className={styles.block_count}>
                     <button className={styles.button_minus} onClick={handleClickMinus}>-</button>
-                    <span className={styles.count}>{count}</span>
+                    <span className={styles.count}>{props.currentCount}</span>
                     <button className={styles.button_plus} onClick={handleClickPlus}>+</button>
                 </div>
-                <span className={styles.productPriceCount}>{count * props.price}$</span>
+                <span className={styles.productPriceCount}>{props.currentCount * props.price}$</span>
             </div>
-            <a className={styles.burgerClose} href="#">
+            <a onClick={removeHandleClick} className={styles.burgerClose} href="item/delete">
                 <span className={styles.span}></span>
                 <span className={styles.span}></span>
                 <span className={styles.span}></span>
