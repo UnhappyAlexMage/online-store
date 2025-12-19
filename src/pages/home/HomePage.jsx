@@ -8,7 +8,7 @@ import PromoBanner from '../../components/promoBanner/PromoBanner.jsx';
 import GetProductsSection from '../../components/ProductsList/GetProductsSection.jsx';
 import RecommendedProducts from '../../components/ProductsRecomemnded/RecommendedProducts.jsx';
 
-export default function HomePage() {
+export default function HomePage(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -41,6 +41,7 @@ export default function HomePage() {
                 visibleCount={visibleCountTrending}
                 onShowClick={setTrendTen}
                 onHideClick={setTrendFive}
+                isClicked={props.isClicked}
             />
             <RecommendedProducts />
             <PromoBanner />
@@ -50,6 +51,7 @@ export default function HomePage() {
                 visibleCount={visibleCountLess}
                 onShowClick={setTrendTwenty}
                 onHideClick={setTrendFifteen}
+                isClicked={props.isClicked}
             />
         </Fragment>
     );
