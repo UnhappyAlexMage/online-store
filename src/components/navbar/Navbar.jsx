@@ -25,7 +25,9 @@ export default function Navbar() {
                     <button className={styles.buttonLogin}>Sign In</button>
                     <button className={styles.buttonRegis}>Sign Up</button>
                 </div>
-                <a className={styles.a} href="#"><img src={basketPict} alt="picture_shop" /></a>
+                <NavLink to="cart">
+                    <a className={styles.a} href="#"><img src={basketPict} alt="picture_shop" /></a>
+                </NavLink>
             </ul>
             <a href="/" className={`${styles.burger} ${showMenu ? styles.burgerActive : ''}`} onClick={handleBurgerClick}>
                 <span className={styles.span}></span>
